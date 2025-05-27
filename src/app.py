@@ -4,7 +4,7 @@ import os
 from verification import register_user, predict_verification
 
 # Page Configuration
-st.set_page_config(page_title="Speaker Verification", page_icon="🎙️", layout="centered")
+st.set_page_config(page_title="Spoof Aware Speaker Verification", page_icon="🎙️", layout="centered")
 
 # App Header
 st.markdown("""
