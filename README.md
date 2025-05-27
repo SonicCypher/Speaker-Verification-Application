@@ -1,88 +1,51 @@
-# Project Setup Guide
+# Sonic-Cipher: Spoof-Aware Speaker Verification System
 
-This project is a Streamlit application that connects to a PostgreSQL database. Follow the steps below to set up and run the application locally.
+**Sonic-Cipher** is a Python package for robust speaker verification with integrated spoof detection. It combines automatic speaker verification (ASV) with countermeasure (CM) models to identify and reject spoofed audio inputs. Perfect for secure authentication systems using voice biometrics.
 
-## Prerequisites
+# Installation and Configuration
 
-* Conda or any Python environment manager
-* Docker (for PostgreSQL setup)
+1. Install the package
 
----
-
-## Setup Instructions
-
-### 1. Python Environment Setup
-
-Create a Python environment using the specified Python version:
-
-#### Using Conda
-
-```bash
-# Create a new conda environment with Python 3.10.16
-conda create -n your-env-name python=3.10.16
-
-# Activate the environment
-conda activate your-env-name
+``` bash
+pip install sonic-cipher
 ```
 
-#### Using venv (Alternative)
+2. Create a virtual environment and install the dependencies
 
-```bash
-# Create a virtual environment (ensure Python 3.10.16 is installed)
-python -m venv venv
-
-# Activate the environment
-# On Windows:
-venv\Scripts\activate
-# On macOS/Linux:
-source venv/bin/activate
-```
-
----
-
-### 2. Install Required Packages
-
-Install all necessary dependencies using the requirements file:
-
-```bash
+``` bash
 pip install -r requirements.txt
 ```
 
----
+4. Export the below envrionment variables
 
-### 3. Database Configuration
-
-#### PostgreSQL Setup with Docker
-
-For setting up PostgreSQL with Docker, refer to this guide:
-[Get PostgreSQL and pgAdmin 4 up and running with Docker](https://medium.com/@marvinjungre/get-postgresql-and-pgadmin-4-up-and-running-with-docker-4a8d81048aea)
-
-#### Environment Configuration
-
-Create a `.env` file inside the `src` directory with your database configuration:
-Add the following to `src/.env`:
-
-```env
-DB_NAME=your_database_name
-DB_USER=your_database_user
-DB_PASSWORD=your_database_password
-DB_HOST=localhost
-DB_PORT=5432
+``` bash
+DB_NAME=<your_database>
+DB_USER=<your_username>
+DB_PASSWORD=<your_password>
+DB_HOST=<your_database_host>
+DB_PORT=<your_database_port>
 ```
 
----
+> Note: Currently `sonic-cipher` supports only Postgres databases
 
-### 4. Running the Application
+# Usage Example
 
-Run the Streamlit app from the root folder:
+## 📝 Register a Speaker
 
-```bash
-streamlit run src/app.py
+``` python
+from sonic_cipher import register_user
+
+register_user(username, path1, path2, path3)
 ```
 
-The app should be accessible in your browser at:
-[http://localhost:8501](http://localhost:8501)
+- In the registration process, `register_user` accepts paths of 3 audio clips of the user
 
----
+## 🔍 Verify a Speaker
 
+``` python
+from sonic_cipher import predict_verification
+
+is_verified, confidence_score = register_user(username, path_of_test_audio, device="cpu", threshold=0.1994701042959457)
+```
+- Required parameters: username, path of the test audio
 
