@@ -6,8 +6,20 @@
 
 1. Install the package
 
+- From Pypi
+
 ``` bash
 pip install sonic-cipher
+```
+
+- Build from Scratch
+  
+``` bash
+git clone https://github.com/SonicCypher/Speaker-Verification-Application.git
+cd Speaker-Verification-Application
+pip install build
+python -m build
+pip install -e .
 ```
 
 2. Create a virtual environment and install the dependencies
