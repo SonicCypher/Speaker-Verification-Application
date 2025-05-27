@@ -4,14 +4,22 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sonic-cipher"
-version = "0.1.0"
-description = "A speaker verification system"
+version = "1.0.0"
+description = "Spoof-Aware Speaker Verification System"
 readme = "README.md"
+
 authors = [
     {name = "Hansini Karunarathne", email = "hansini.20@cse.mrt.ac.lk"},
     {name = "Wathmi Thennakoon", email = "wathmi.20@cse.mrt.ac.lk"},
     {name = "Sulakshi Gunarathne", email = "sulakshi.20@cse.mrt.ac.lk"}
 ]
+
+maintainers = [
+    {name = "Hansini Karunarathne", email = "hansini.20@cse.mrt.ac.lk"},
+    {name = "Wathmi Thennakoon", email = "wathmi.20@cse.mrt.ac.lk"},
+    {name = "Sulakshi Gunarathne", email = "sulakshi.20@cse.mrt.ac.lk"}
+]
+
 license = {text = "MIT"}
 requires-python = ">=3.8"
 dependencies = [
@@ -113,3 +121,6 @@ dependencies = [
 package-dir = {"" = "src"}
 packages = ["ASV_System", "CM_System", "Weights"]
 include-package-data = true
+
+[project.urls]
+Repository = "https://github.com/SonicCypher/Speaker-Verification-Application.git"
