@@ -2,6 +2,7 @@ import torch
 import json
 from CM_System.cm_utils import preprocess_audio
 from CM_System.AASIST import Model as AASISTModel
+import importlib.resources
 
 def load_model(checkpoint_path, model_config, device):
     model = AASISTModel(model_config)
@@ -12,7 +13,8 @@ def load_model(checkpoint_path, model_config, device):
     return model
 
 def evaluate_utterance(checkpoint_path,file_path, device):
-    with open("src/CM_System/AASIST_config.json", "r") as f:
+    CM_CONFIG_PATH = importlib.resources.files("CM_System").joinpath("AASIST_config.json")
+    with open(CM_CONFIG_PATH, "r") as f:
         model_config = json.load(f)
     model = load_model(checkpoint_path, model_config, device)
     x = preprocess_audio(file_path)

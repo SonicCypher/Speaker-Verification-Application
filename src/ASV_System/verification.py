@@ -5,10 +5,9 @@ from torch.nn.utils.rnn import pad_sequence
 from ASV_System.resnet_models import se_res2net50_v1b
 from ASV_System.db_utils import save_embedding_to_postgres, load_embedding_from_postgres
 import speechbrain as sb
+import importlib.resources
 
-# register - username , path 3
-# verify - username , path 1
-MODEL_ASV_PATH = "src/Weights/ASV_model.pth"
+MODEL_ASV_PATH = importlib.resources.files("Weights").joinpath("ASV_model.pth")
 
 run_opts = {
     "device": "cuda" if torch.cuda.is_available() else "cpu"
