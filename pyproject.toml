@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sonic-cipher"
-version = "0.1.0-alpha.1"
+version = "0.1.0-rc.1"
 description = "Spoof-Aware Speaker Verification System"
 readme = "README.md"
 

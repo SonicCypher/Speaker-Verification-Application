@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://test.pypi.org/p/sonic-cipher
+      url: https://pypi.org/p/sonic-cipher
     permissions:
       id-token: write
     steps:
@@ -28,5 +28,3 @@ jobs:
           python -m build
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          repository-url: https://test.pypi.org/legacy/
