@@ -1,0 +1,24 @@
+services:
+  db:
+    image: postgres:15
+    container_name: postgres-db
+    restart: always
+    environment:
+      POSTGRES_DB: sonic
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+
+  web:
+    build: .
+    container_name: streamlit-app
+    depends_on:
+      - db
+    environment:
+      DB_NAME: sonic
+      DB_USER: root
+      DB_PASSWORD: root
+      DB_HOST: db
+      DB_PORT: 5432
+    ports:
+      - "8501:8501"
+    command: streamlit run app.py

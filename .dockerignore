@@ -1,0 +1,29 @@
+# Byte-compiled / cache files
+__pycache__/
+
+# Build artifacts
+build/
+dist/
+
+# Environment files
+.env
+*.env
+
+# Virtual environments
+.venv/
+venv/
+
+# Logs
+*.log
+
+# IDE / Editor folders
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore

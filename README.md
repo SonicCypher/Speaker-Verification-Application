@@ -38,6 +38,15 @@ DB_HOST=<your_database_host>
 DB_PORT=<your_database_port>
 ```
 
+# Using the application using sample streamlit app
+- Use the docker-compose file to run the application
+
+``` bash
+docker-compose up --build
+```
+
+- Access the application at `http://localhost:8501`
+
 > Note: Currently `sonic-cipher` supports only Postgres databases
 
 # Usage Example
