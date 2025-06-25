@@ -42,7 +42,7 @@ DB_PORT=<your_database_port>
 - Use the docker-compose file to run the application
 
 ``` bash
-docker-compose up --build
+docker compose up -d --build
 ```
 
 - Access the application at `http://localhost:8501`
